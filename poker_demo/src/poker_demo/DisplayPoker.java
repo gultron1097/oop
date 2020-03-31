@@ -26,6 +26,8 @@ public class DisplayPoker {
 		File pokerFile = new File(cardFilename);
 		//Read image data from the file object
 		BufferedImage img  = ImageIO.read(pokerFile);
+		int imgWidth = img.getWidth();
+		int imgHeight = img.getHeight();
 		
 		//Step 3: Create a GUI interface
 		//for displaying the image
@@ -33,6 +35,7 @@ public class DisplayPoker {
 		
 		JFrame frame = new JFrame();
 		frame.setLayout(new FlowLayout());
+		frame.setSize(imgWidth + 20, imgHeight*2 + 45);
 		frame.setSize(250, 360 * 2);
 		frame.setTitle(cardFilename);
 		
